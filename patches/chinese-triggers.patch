@@ -1,0 +1,23 @@
+# 中文触发词补丁
+#
+# 此文件记录了对官方 superpowers 的中文本地化修改
+# 每次从上游更新后，需要重新应用这些修改
+#
+# 使用方法：
+#   ./scripts/apply-chinese-patches.sh
+#
+
+## 1. skills/brainstorming/SKILL.md
+#
+# 在 description 字段添加中文触发词
+#
+# 原始 description:
+#   description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+#
+# 修改后 description (中文部分需要追加到原始值末尾，用 | 分隔):
+#   description: "...(原始内容)... | 在任何创造性工作之前必须使用 - 创建功能、构建组件、添加功能或修改行为。在实现前探索用户意图、需求和设计。中文触发词: 做个功能、写个组件、加个功能、头脑风暴、讨论一下、帮我设计、新功能"
+#
+# 修改位置: 第3行
+# 修改类型: 追加中文触发词
+
+PATCH_BRAINSTORMING_DESC='s/description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."$/description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation. | 在任何创造性工作之前必须使用 - 创建功能、构建组件、添加功能或修改行为。在实现前探索用户意图、需求和设计。中文触发词: 做个功能、写个组件、加个功能、头脑风暴、讨论一下、帮我设计、新功能"/'
